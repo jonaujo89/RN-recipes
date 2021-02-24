@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         margin: 15,
         height: 150,
         borderRadius: 25,
-        overflow: hidden
+        overflow: 'hidden'
     },
     container: {
         flex: 1,
