@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Button, View } from 'react-native';
 
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
+
+import MealsNavigator from './navigation/MealsNavigator';
 
 
 const fetchFonts = () => {
@@ -24,10 +26,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <MealsNavigator />
   );
 }
 
