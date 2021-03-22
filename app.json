@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "rn-meals",
+    "name": "Look for meals",
+    "description": "Browse different meals. Use filters. See what you need to prep one.",
     "slug": "rn-meals",
     "version": "1.0.0",
     "orientation": "portrait",
