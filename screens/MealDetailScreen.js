@@ -29,19 +29,16 @@ const MealDetailScreen = ({ navigation }) => {
     const dispatch = useDispatch();
 
     const toggleFavoriteHandler = useCallback(() => {
-        console.log('toggleFavoriteHandler',mealId)
         dispatch(toggleFavorite(mealId));
     }, [dispatch, mealId]);
 
     useEffect(() => {
         //not optimal, header didn't show up right away
         // navigation.setParams({ mealTitle: selectedMeal.title });
-        console.log('useEffect',mealId)
         navigation.setParams({ toggleFav: toggleFavoriteHandler });
     }, [toggleFavoriteHandler]);
 
     useEffect(() => {
-        console.log(currentMealIsFavorite)
         navigation.setParams({ isFav: currentMealIsFavorite });
     }, [currentMealIsFavorite]);
 
