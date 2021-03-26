@@ -19,26 +19,29 @@ const ListItem = ({ children }) => {
 
 const MealDetailScreen = ({ navigation }) => {
     const availableMeals = useSelector(state => state.meals.meals);
+    const mealId = navigation.getParam('mealId');
     const currentMealIsFavorite = useSelector(state => 
         state.meals.favoriteMeals.some(meal => meal.id === mealId)
     );
-    const mealId = navigation.getParam('mealId');
 
     const selectedMeal = availableMeals.find(meal => meal.id === mealId);
 
     const dispatch = useDispatch();
 
-    const toggleFavoriteHandler = useCallback((mealId) => {
+    const toggleFavoriteHandler = useCallback(() => {
+        console.log('toggleFavoriteHandler',mealId)
         dispatch(toggleFavorite(mealId));
     }, [dispatch, mealId]);
 
     useEffect(() => {
         //not optimal, header didn't show up right away
         // navigation.setParams({ mealTitle: selectedMeal.title });
+        console.log('useEffect',mealId)
         navigation.setParams({ toggleFav: toggleFavoriteHandler });
     }, [toggleFavoriteHandler]);
 
     useEffect(() => {
+        console.log(currentMealIsFavorite)
         navigation.setParams({ isFav: currentMealIsFavorite });
     }, [currentMealIsFavorite]);
 
